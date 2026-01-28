@@ -1,0 +1,12 @@
+O.K Kollection/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── main.js
+└── assets/
+    └── images/
+        ├── shirt.jpg
+        ├── dress.jpg
+        └── logo.png
+        

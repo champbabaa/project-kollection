@@ -2,5 +2,5 @@ O.K Kollection/
 ├── index.html   ✅
 ├── js/
 │   └── main.js
-
-
+├── images/
+│   └── logo.png
