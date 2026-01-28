@@ -1,6 +1,6 @@
 O.K Kollection/
+├── index.html   ✅
 ├── js/
-│   └── main.js   ✅
-alert("JavaScript connected!");
+│   └── main.js
 
 
