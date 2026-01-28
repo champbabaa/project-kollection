@@ -1,0 +1,5 @@
+O.K Kollection/
+├── js/
+│   └── main.js   ✅
+alert("JavaScript connected!");
+
