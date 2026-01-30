@@ -1,5 +1,10 @@
 // O.K Kollection Project Structure
 // - index.html
+// - product.html
+// - about.html
+// - contact.html
+// - css/
+//   - styles.css
 // - js/
 //   - main.js
 // - images/
