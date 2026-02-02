@@ -1,13 +1,16 @@
 O.K Kollection/
 ├── index.html
+├── product.html
+
 ├── css/
 │   └── styles.css
 ├── js/
 │   └── main.js
 └── assets/
     └── images/
-        ├── shirt.jpg
-        ├── dress.jpg
+        ├── shirt.png
+        ├── dress.png
+        ├── babywear.png
         └── logo.png
         
 c:\Users\ADMIN\AppData\Local\Microsoft\Windows\INetCache\IE\S8B3GACS\Screenshot_20260123-204941[1].png
