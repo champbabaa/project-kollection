@@ -1,6 +1,8 @@
 O.K Kollection/
 ├── index.html
 ├── product.html
+    about.html
+    contact.html
 ├── css/
 │   └── styles.css
 ├── js/
