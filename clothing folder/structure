@@ -1,5 +1,9 @@
 index.html
-clothing.html
-men.html
-women.html
-babywear.html
+clothing/
+│── men.html
+│── women.html
+│── babywear.html
+│── clothing.html   ← optional main page
+assets/
+│── images/
+style.css
