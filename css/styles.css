@@ -91,7 +91,8 @@ body {
     margin-top: 40px;
 
 }.logo {
-    width: 1000px;     
-    height: 1000px;
+    width: 120px;     
+    height: 120px;
+    object-fit: cover;
 }
 
