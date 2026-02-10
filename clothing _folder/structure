@@ -12,6 +12,6 @@ project-kollection/
 └── assets/
     └── images/
         └── clothing/
-            ├── men-shirt.png
-            ├── women-dress.png
-            └── baby-onesie.png
+            ├── men-shirt.jpg
+            ├── women-dress.jpg
+            └── baby-onesie.jpg
