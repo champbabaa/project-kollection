@@ -1,9 +1,17 @@
-index.html
-clothing/
-│── men.html
-│── women.html
-│── babywear.html
-│── clothing.html   ← optional main page
-assets/
-│── images/
-style.css
+
+project-kollection/
+│
+├── index.html
+│
+├── clothing/
+│   ├── clothing.html
+│   ├── men.html
+│   ├── women.html
+│   └── babywear.html
+│
+└── assets/
+    └── images/
+        └── clothing/
+            ├── men-shirt.jpg
+            ├── women-dress.jpg
+            └── baby-onesie.jpg
