@@ -96,4 +96,8 @@ body {
     object-fit: contain;
     display: block;
 }
-
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
