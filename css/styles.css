@@ -51,17 +51,17 @@ body {
 }
 /* Products */
 .products {
-    padding: 60px40px;
+    padding: 40px40px;
     text-align: center;
 }
 
 .product-grid {
     display: grid;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     margin-top: 20px;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 10px;
 }
 
 .product-card {
