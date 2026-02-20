@@ -104,5 +104,5 @@ body {
     height: 260px;
     object-fit: cover;
     border-radius: 6px;
-    aspect-ratio: 1 / 1;
+    display: block;
 }
