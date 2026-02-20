@@ -67,6 +67,7 @@ body {
     background-color: white;
     padding: 15px;
     border-radius: 8px;
+    overflow: hidden;
 }
 
 .product-card button {
