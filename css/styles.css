@@ -127,6 +127,10 @@ body {
     .product-card img {
         height: 200px;
     }
+
+    .product-card h3 {
+        font-size: 14px;
+    }
 }
 
 /* PRODUCT TITLE */
