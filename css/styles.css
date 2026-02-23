@@ -19,6 +19,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
 }
+
 .header nav a {
     color: white;
     margin-left: 20px;
