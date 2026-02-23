@@ -92,7 +92,9 @@ body {
     padding: 15px;
     margin-top: 40px;
 
-}.logo {
+}
+
+.logo {
     width: 120px;     
     height: 120px;
     object-fit: contain;
