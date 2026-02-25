@@ -167,3 +167,7 @@ body {
   font-size: 18px;
   cursor: pointer;
 }
+
+.wishlist-btn.active {
+  color: red;
+}
