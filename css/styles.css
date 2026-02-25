@@ -151,7 +151,7 @@ body {
 }
 
 .wishlist-btn {
-  position: absolute;
+  position: sticky;
   bottom: 5px;
   right:  5px;
 
