@@ -151,6 +151,7 @@ body {
 }
 .product-card {
     position: relative;
+    color: whitesmoke;
 }
 
 .wishlist-btn {
