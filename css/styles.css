@@ -160,7 +160,7 @@ body {
   right:  10px;
 
   background:transparent;
-  color: white;
+  color: white;         /*initially, the heart is white*/
   border: none;
   padding: 0;
   border-radius:none;
@@ -169,5 +169,5 @@ body {
 }
 
 .wishlist-btn.active {
-  color: orange;
+  color: orange;        /*when clicked, the heart turns orange*/
 }
