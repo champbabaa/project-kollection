@@ -149,13 +149,16 @@ body {
     font-weight: bold;
     margin-bottom: 12px;
 }
+.product-card {
+    position: relative;
+}
 
 .wishlist-btn {
   position: absolute;
-  bottom: 5px;
-  right:  5px;
+  bottom: 10px;
+  right:  10px;
 
-  background:whitesmoke;
+  background:transparent;
   color: orange;
   border: none;
   padding: 0;
