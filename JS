@@ -7,5 +7,6 @@
 //   - styles.css
 // - js/
 //   - main.js
+//   - wishlist.js
 // - images/
 //   - logo.png
