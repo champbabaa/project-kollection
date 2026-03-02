@@ -14,4 +14,4 @@ document.querySelectorAll(".wishlist-btn").forEach(button => {
 
   });
 
-});
+});console.log("JavaScript is working!");
