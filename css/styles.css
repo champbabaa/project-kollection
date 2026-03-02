@@ -164,7 +164,7 @@ body {
   color: white;         /*initially, the heart is white*/
   border: none;
   padding: 0;
-  border-radius:none;
+  border-radius: 50%;
   font-size: 18px;
   cursor: pointer;
 }
