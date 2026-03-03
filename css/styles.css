@@ -125,13 +125,13 @@ body {
 
 .wishlist-btn:hover {
     background: #FF69B4;
-    color: white;
+    color: whitesmoke;
     transform: scale(1.1);
 }
 
 .wishlist-btn.active {
     background: #FF69B4;
-    color: smokewhite;
+    color: white;
 }
 
 /* Add to Cart Button - Separate and Visible */
