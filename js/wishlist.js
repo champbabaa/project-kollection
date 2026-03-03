@@ -14,13 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
 // INITIALIZE WISHLIST BUTTONS
 // ========================================
 function initializeWishlistButtons() {
+  console.log("initializing wishlist buttons");
   document.querySelectorAll(".wishlist-btn").forEach(button => {
     const productId = button.getAttribute("data-product-id");
     
     // Check if product is in wishlist and update button state
     if (isInWishlist(productId)) {
+      console.log("button", productId, "is already in wishlist");
       button.classList.add("active");
-      button.style.color = '#FF1493';             // ensure bright pink when active
+      button.style.color = '#FF1493';
       updateButtonIcon(button, true);
     }
 
@@ -39,14 +41,17 @@ function toggleWishlist(button) {
   const productName = button.getAttribute("data-product-name");
   const productPrice = button.getAttribute("data-product-price");
   const productImage = button.getAttribute("data-product-image");
+  console.log("toggleWishlist called for", productId, "current active?", button.classList.contains('active'));
 
   if (isInWishlist(productId)) {
+    console.log("removing", productId);
     removeFromWishlist(productId);
     button.classList.remove("active");
-    button.style.color = 'lightpink';           // revert to light pink when removed
+    button.style.color = 'lightpink';
     updateButtonIcon(button, false);
     showWishlistNotification(`"${productName}" removed from wishlist`);
   } else {
+    console.log("adding", productId);
     addToWishlist({
       id: productId,
       name: productName,
@@ -54,7 +59,7 @@ function toggleWishlist(button) {
       image: productImage
     });
     button.classList.add("active");
-    button.style.color = '#FF1493';             // make sure color stays bright pink
+    button.style.color = '#FF1493';
     updateButtonIcon(button, true);
     showWishlistNotification(`"${productName}" added to wishlist`);
   }
@@ -129,6 +134,7 @@ function clearWishlist() {
   // Update all buttons
   document.querySelectorAll(".wishlist-btn").forEach(btn => {
     btn.classList.remove("active");
+    btn.style.color = 'lightpink';
     updateButtonIcon(btn, false);
   });
   
