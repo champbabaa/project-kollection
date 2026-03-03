@@ -28,6 +28,23 @@
         <p>Email: okkollection@gmail.com</p>
         <p>Phone: +254 728442730</p>
         <p>Lillian Adhiambo</p>
+
+        <h3>Send us a Message</h3>
+        <form id="contact-form" onsubmit="handleContactForm(event)">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
     </section>
   </main>
 
@@ -37,5 +54,18 @@
 
   <!-- JS -->
   <script src="js/contact.js"></script>
+  <script>
+    function handleContactForm(event) {
+      event.preventDefault();
+      const form = document.getElementById("contact-form");
+      
+      if (validateForm(form)) {
+        showNotification("Message sent successfully!");
+        form.reset();
+      } else {
+        showNotification("Please fill in all required fields", 3000);
+      }
+    }
+  </script>
 </body>
 </html>
