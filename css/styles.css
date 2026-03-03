@@ -104,11 +104,11 @@ body {
     transform: scale(1.05);
 }
 
-/* Wishlist Button - Shifted near price */
+/* Wishlist Button - Positioned at bottom-right of image */
 .wishlist-btn {
     position: absolute;
-    bottom: 60px;                    /* place above add-to-cart, near price */
-    right: 10px;
+    bottom: 8px;
+    right: 8px;
     background: none;                /* no background color */
     border: none;                    /* remove border */
     color: lightpink;                /* light pink icon */
@@ -127,9 +127,6 @@ body {
 .wishlist-btn.active {
     color: #FF1493;                  /* stay extra pink when active */
 }
-
-/* ensure product card is positioned */
-.product-card { position: relative; }
 
 /* Add to Cart Button - Separate and Visible */
 .add-to-cart-btn {
