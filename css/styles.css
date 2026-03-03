@@ -131,7 +131,7 @@ body {
 
 .wishlist-btn.active {
     background: white;
-    color: pink;
+    color: red;
 }
 
 /* Add to Cart Button - Separate and Visible */
