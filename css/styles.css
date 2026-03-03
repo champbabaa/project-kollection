@@ -124,8 +124,8 @@ body {
 }
 
 .wishlist-btn:hover {
-    background: #FF69B4;
-    color: whitesmoke;
+    background: whitesmoke;
+    color: pink;
     transform: scale(1.1);
 }
 
