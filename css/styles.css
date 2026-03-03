@@ -109,7 +109,9 @@ body {
     position: absolute;
     bottom: 8px;
     right: 8px;
-    color: lightpink;
+    background: lightpink;          /* default light pink background */
+    color: #FF1493;                 /* deep pink icon/text */
+    border: 2px solid #FF1493;      /* border to match color */
     padding: 8px;
     border-radius: 50%;
     font-size: 16px;
@@ -124,14 +126,14 @@ body {
 }
 
 .wishlist-btn:hover {
-    background: whitesmoke;
-    color: pink;
+    background: #FF69B4;           /* brighter pink on hover */
+    color: white;
     transform: scale(1.1);
 }
 
 .wishlist-btn.active {
-    background: white;
-    color: red;
+    background: #FF69B4;           /* remain bright pink when active */
+    color: white;
 }
 
 /* Add to Cart Button - Separate and Visible */
