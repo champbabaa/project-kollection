@@ -20,6 +20,7 @@ function initializeWishlistButtons() {
     // Check if product is in wishlist and update button state
     if (isInWishlist(productId)) {
       button.classList.add("active");
+      button.style.color = '#FF1493';             // ensure bright pink when active
       updateButtonIcon(button, true);
     }
 
@@ -42,6 +43,7 @@ function toggleWishlist(button) {
   if (isInWishlist(productId)) {
     removeFromWishlist(productId);
     button.classList.remove("active");
+    button.style.color = 'lightpink';           // revert to light pink when removed
     updateButtonIcon(button, false);
     showWishlistNotification(`"${productName}" removed from wishlist`);
   } else {
@@ -52,6 +54,7 @@ function toggleWishlist(button) {
       image: productImage
     });
     button.classList.add("active");
+    button.style.color = '#FF1493';             // make sure color stays bright pink
     updateButtonIcon(button, true);
     showWishlistNotification(`"${productName}" added to wishlist`);
   }
