@@ -46,8 +46,32 @@ html, body {
     justify-content: center;
     gap: 2rem;
 }
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
 
+.navbar a:hover {
+    color: #007bff;
+}
 
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .logo-overlay {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .navbar ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+.navbar a {
+        font-size: 0.9rem;
+    }
+}
 
 
 
