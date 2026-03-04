@@ -20,6 +20,15 @@ html, body {
     position: relative;
 }
 
+/* Logo container - holds both image and tagline */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
 /* Logo styling - scales responsively */
 .logo-overlay {
     max-width: 100%;
