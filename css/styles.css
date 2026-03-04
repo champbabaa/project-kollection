@@ -29,7 +29,23 @@ html, body {
     object-fit: contain;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
+/* Professional navigation bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
 
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
 
 
 
