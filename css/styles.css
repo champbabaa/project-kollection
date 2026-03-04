@@ -38,6 +38,14 @@ html, body {
     object-fit: contain;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
+
+/* Tagline styling */
+.tagline {
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
 /* Professional navigation bar */
 .navbar {
     position: fixed;
