@@ -47,6 +47,18 @@ html, body {
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 }
+
+/* Fade-in animation for tagline */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* Professional navigation bar */
 .navbar {
     position: fixed;
