@@ -45,6 +45,7 @@ html, body {
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
 }
 /* Professional navigation bar */
 .navbar {
