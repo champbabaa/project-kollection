@@ -176,6 +176,24 @@ html, body {
     font-size: 3rem;
 }
 
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: #007bff;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
 /* Professional navigation bar */
 .navbar {
     position: fixed;
