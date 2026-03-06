@@ -265,13 +265,6 @@ html, body {
     opacity: 0.8;
 }
 
-/* Hero */
-.hero {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-}
 
 .hero button {
     margin-top: 20px;
