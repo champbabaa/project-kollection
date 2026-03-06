@@ -4,63 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O.K Kollection</title>
+
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
 
     <!-- Full-page hero section with logo -->
     <section class="hero" id="hero">
+
         <div class="logo-container">
              <img class="logo-overlay" src="assets/images/logo/logo.png" alt="O.K Kollection Logo">
-             
         </div>
+
+        <h2>Affordable fashion for everyone</h2>
+        <button onclick="showmenu()">shop now</button>
+
     </section>
 
     <!-- Shop Menu Section -->
-    <section class="shop-menu" id="shopMenu" style="display: none;">
+    <section class="shop-menu" id="shopMenu" style="display:none;">
+
         <button class="back-btn" onclick="backToHome()">← Back</button>
+
         <div class="menu-container">
             <h2>Select Category</h2>
+
             <button class="category-btn" onclick="showCategory('mens')">👔 Men's Fashion</button>
+
             <button class="category-btn" onclick="showCategory('womens')">👗 Women's Fashion</button>
+
             <button class="category-btn" onclick="showCategory('kids')">👕 Kids Fashion</button>
+
         </div>
+
     </section>
 
     <!-- Products Section -->
-    <section class="products-section" id="productsSection" style="display: none;">
+    <section class="products-section" id="productsSection" style="display:none;">
+
         <button class="back-btn" onclick="backToMenu()">← Back</button>
+
         <h2 id="categoryTitle"></h2>
+
         <div class="products-grid" id="productsGrid">
             <!-- Products will be loaded here -->
         </div>
+
     </section>
 
-    
-
-    <script src="js/main.js"></script>
-    <script src="js/wishlist.js"></script>
-
- <!-- Hero Section -->
-    <section class="hero">
-     <h2>Affordable fashion for everyone</h2>
-       <button>Shop Now</button>
-    </section>
-
-</body>
-</html>
-
-    <!-- Footer -->
+ <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2026 O.K Kollection Clothing. All rights reserved.</p>
     </footer>
+
+
     <script src="js/main.js"></script>
     <script src="js/wishlist.js"></script>
 
 </body>
 </html>
 
+
+ 
+
+
+
    
+
+
 
 
 
