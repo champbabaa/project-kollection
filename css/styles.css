@@ -331,7 +331,7 @@ html, body {
     right: 8px;
     background: none;                /* no background color */
     border: none;                    /* remove border */
-    color: lightpink;                /* light pink icon */
+    color: #ff4d6d;                /* light pink icon */
     padding: 0;
     font-size: 20px;
     cursor: pointer;
