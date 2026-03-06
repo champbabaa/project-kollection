@@ -234,3 +234,29 @@ function openOverlay(src) {
   }
   overlay.innerHTML = `<img src="${src}" style="max-width:90%;max-height:90%;border:4px solid white;"/>`;
 }
+
+// ========================================
+// SHOP MENU NAVIGATION
+// ========================================
+
+function showMenu() {
+  document.getElementById("hero").style.display = "none";
+  document.getElementById("shopMenu").style.display = "block";
+}
+
+function backToHome() {
+  document.getElementById("shopMenu").style.display = "none";
+  document.getElementById("hero").style.display = "block";
+}
+
+function showCategory(category) {
+  document.getElementById("shopMenu").style.display = "none";
+  document.getElementById("productsSection").style.display = "block";
+
+  document.getElementById("categoryTitle").textContent = category + " Fashion";
+}
+
+function backToMenu() {
+  document.getElementById("productsSection").style.display = "none";
+  document.getElementById("shopMenu").style.display = "block";
+}
