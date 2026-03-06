@@ -160,7 +160,7 @@ function filterByPrice(minPrice, maxPrice) {
 // 8. SORT PRODUCTS
 // ========================================
 function sortProducts(sortBy) {
-  const container = document.querySelector(".products-container");
+  const container = document.querySelector(".products-grid");
   const products = Array.from(document.querySelectorAll(".product-item"));
   
   products.sort((a, b) => {
