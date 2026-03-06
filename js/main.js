@@ -210,10 +210,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // 11. IMAGE ENLARGER
 // ========================================
-function initializeImageEnlarger() {
-  document.querySelectorAll('.product-img-wrapper img').forEach(img => {
-    img.style.cursor = 'pointer';
-    img.addEventListener('click', () => openOverlay(img.src));
+
+  const images = document.querySelectorAll(".product-img-wrapper img");
+  if(images.length){
+    images.foreach(img=>{
+    img.style.cursor = "pointer";
+    img.addEventListener("click", () => openOverlay(img.src));
   });
 }
 
