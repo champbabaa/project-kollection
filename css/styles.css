@@ -179,8 +179,7 @@ html, body {
     background: linear-gradient(135deg, #ddd 0%, #ccc 100%);
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 3rem;
+    
 }
 
 .product-info {
