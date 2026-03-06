@@ -18,6 +18,9 @@ html, body {
     align-items: center;
     justify-content: center;
     position: relative;
+    color: white;
+    flex-direction: column;
+    text-align: center;
 }
 
 /* Logo container - holds both image and tagline */
