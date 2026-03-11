@@ -154,7 +154,7 @@ html, body {
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -314,7 +314,7 @@ html, body {
 }
 
 .product-card img {
-    width: 100%;
+    width: 200px;
     height: auto; /* maintain aspect ratio */
     object-fit: contain; /* change to maintain aspect ration*/
     display: flex;
