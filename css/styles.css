@@ -322,6 +322,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
     transition: 0.4s ease;
 }
 
