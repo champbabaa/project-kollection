@@ -533,7 +533,7 @@ html, body {
 /* CHECKOUT PAGE STYLING */
 body.checkout-page {
     min-height: 100vh;
-    background: #ff8c00;
+    background: #ffd180;
     color: #111;
 }
 
