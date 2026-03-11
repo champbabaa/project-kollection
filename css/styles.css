@@ -313,6 +313,8 @@ html, body {
     height: 350px;
     overflow: hidden;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-card img {
