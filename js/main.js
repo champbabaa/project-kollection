@@ -208,16 +208,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// 11. IMAGE ENLARGER
+// 11. IMAGE ENLARGER (double-click to zoom)
 // ========================================
 
-  const images = document.querySelectorAll(".product-img-wrapper img");
-  if(images.length){
-    images.foreach(img=>{
-    img.style.cursor = "pointer";
-    img.addEventListener("click", () => openOverlay(img.src));
-  });
-}
+const productImages = document.querySelectorAll('.product-card img');
+productImages.forEach(img => {
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('dblclick', () => openOverlay(img.src));
+});
 
 function openOverlay(src) {
   let overlay = document.getElementById('image-overlay');
@@ -226,15 +224,32 @@ function openOverlay(src) {
     overlay.id = 'image-overlay';
     overlay.style.cssText = `
       position: fixed;
-      top:0;left:0;width:100%;height:100%;
-      background:rgba(0,0,0,0.8);
-      display:flex;align-items:center;justify-content:center;
-      z-index:10000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      cursor: zoom-out;
     `;
+
     overlay.addEventListener('click', () => overlay.remove());
     document.body.appendChild(overlay);
   }
-  overlay.innerHTML = `<img src="${src}" style="max-width:90%;max-height:90%;border:4px solid white;"/>`;
+
+  overlay.innerHTML = `<img src="${src}" style="max-width:90%;max-height:90%;border:4px solid white;box-shadow:0 0 0 100vw rgba(0,0,0,0.7);"/>`;
+
+  // Close on escape
+  const escListener = (e) => {
+    if (e.key === 'Escape') {
+      overlay.remove();
+      document.removeEventListener('keydown', escListener);
+    }
+  };
+  document.addEventListener('keydown', escListener);
 }
 
 // ========================================
