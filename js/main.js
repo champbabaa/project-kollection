@@ -87,6 +87,16 @@ function getCartTotal() {
   return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 }
 
+// Expose cart helpers for other pages (e.g., checkout)
+function getCart() {
+  return cart;
+}
+
+function clearCart() {
+  cart.length = 0;
+  saveCartToLocalStorage();
+}
+
 // 5. SEARCH FUNCTIONALITY
 // ========================================
 function initializeSearchFunctionality() {
