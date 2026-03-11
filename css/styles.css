@@ -317,7 +317,7 @@ html, body {
     width: 200px;
     height: auto; /* maintain aspect ratio */
     object-fit: contain; /* change to maintain aspect ration*/
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     flex-direction: row and column;
