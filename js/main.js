@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeNavigation();
   initializeSearchFunctionality();
   loadCartFromLocalStorage();
+  renderCartPanel();
   initializeImageEnlarger();
 });
 
@@ -60,6 +61,7 @@ function addToCart(productId, productName, price) {
   }
   
   saveCartToLocalStorage();
+  renderCartPanel();
   showNotification(`"${productName}" added to cart!`);
   console.log("Cart updated:", cart);
 }
@@ -69,6 +71,7 @@ function removeFromCart(productId) {
   if (index > -1) {
     cart.splice(index, 1);
     saveCartToLocalStorage();
+    renderCartPanel();
   }
 }
 
@@ -95,6 +98,49 @@ function getCart() {
 function clearCart() {
   cart.length = 0;
   saveCartToLocalStorage();
+  renderCartPanel();
+}
+
+function renderCartPanel() {
+  const panel = document.getElementById('cart-panel');
+  if (!panel) return;
+
+  const items = getCart();
+  if (items.length === 0) {
+    panel.innerHTML = `
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+      </div>
+      <div class="cart-empty">Your cart is empty.</div>
+    `;
+    return;
+  }
+
+  const rows = items.map(item => {
+    return `
+      <div class="cart-item">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-qty">x${item.quantity}</div>
+        <div class="cart-item-price">KES ${item.price * item.quantity}</div>
+        <button class="remove-cart-btn" data-id="${item.id}">✕</button>
+      </div>
+    `;
+  }).join('');
+
+  panel.innerHTML = `
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <div class="cart-total">Total: KES ${getCartTotal()}</div>
+    </div>
+    <div class="cart-items">${rows}</div>
+    <button class="cart-checkout-btn" onclick="location.href='../public files/checkout.html'">Go to Checkout</button>
+  `;
+
+  panel.querySelectorAll('.remove-cart-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      removeFromCart(btn.dataset.id);
+    });
+  });
 }
 
 // 5. SEARCH FUNCTIONALITY
