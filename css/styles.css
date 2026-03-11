@@ -530,6 +530,101 @@ html, body {
     background: #111;
 }
 
+/* CHECKOUT PAGE STYLING */
+body.checkout-page {
+    min-height: 100vh;
+    background: #ff8c00;
+    color: #111;
+}
+
+.checkout {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    color: #111;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+.checkout h2 {
+    margin-top: 0;
+    color: #111;
+    border-bottom: 3px solid #ff8c00;
+    padding-bottom: 0.5rem;
+}
+
+.checkout label {
+    display: block;
+    font-weight: 700;
+    margin-top: 1rem;
+    color: #111;
+}
+
+.checkout input,
+.checkout textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.3rem;
+    border: 2px solid #ff8c00;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #111;
+    font-size: 1rem;
+}
+
+.checkout input:focus,
+.checkout textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.3);
+}
+
+.checkout fieldset {
+    border: 2px solid rgba(255, 140, 0, 0.6);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.checkout legend {
+    font-weight: 700;
+    color: #111;
+}
+
+.checkout .checkout-btn {
+    width: 100%;
+    background: #ff8c00;
+    color: #111;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.checkout .checkout-btn:hover {
+    background: #ff6f00;
+}
+
+.checkout .order-summary {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 140, 0, 0.6);
+    margin-bottom: 1.5rem;
+}
+
+.checkout .order-summary h3 {
+    margin-top: 0;
+}
+
+.checkout .order-summary p {
+    color: #111;
+}
+
 /* PRODUCT TITLE */
 .product-card h3 {
     margin: 12px 0 6px;
