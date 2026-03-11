@@ -312,7 +312,7 @@ html, body {
     width: 100%;
     height: 350px;
     overflow: hidden;
-    display: grid;
+    display: flex;
 }
 
 .product-card img {
