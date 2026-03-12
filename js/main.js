@@ -270,7 +270,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ========================================
 
 function initializeImageEnlarger() {
-  const images = document.querySelectorAll('.product-card img, .product-img-wrapper img');
+  const images = document.querySelectorAll('img');
 
   images.forEach(img => {
     img.style.cursor = 'zoom-in';
