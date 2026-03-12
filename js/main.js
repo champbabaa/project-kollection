@@ -157,12 +157,12 @@ function initializeSearchFunctionality() {
 }
 
 function filterProducts(query) {
-  const products = document.querySelectorAll(".product-item");
+  const products = document.querySelectorAll(".product-card");
   
   products.forEach(product => {
     const name = product.textContent.toLowerCase();
     if (name.includes(query)) {
-      product.style.display = "block";
+      product.style.display = "flex";
     } else {
       product.style.display = "none";
     }
@@ -312,6 +312,124 @@ function openOverlay(src) {
 // SHOP MENU NAVIGATION
 // ========================================
 
+const productCatalog = {
+  mens: [
+    {
+      id: "men-1",
+      name: "Men's Classic Shirt",
+      price: 950,
+      image: "assets/images/clothing/IMG.jpg",
+      description: "Elegant everyday shirt"
+    },
+    {
+      id: "men-2",
+      name: "Men's Denim Jacket",
+      price: 1500,
+      image: "assets/images/clothing/IMG-20260204-WA0001.jpg",
+      description: "Casual denim jacket"
+    },
+    {
+      id: "men-3",
+      name: "Men's Joggers",
+      price: 800,
+      image: "assets/images/clothing/IMG-20260204-WA0002.jpg",
+      description: "Comfort-fit joggers"
+    }
+  ],
+  womens: [
+    {
+      id: "women-1",
+      name: "Women Dress 1",
+      price: 1000,
+      image: "assets/images/clothing/IMG-20260204-WA0001.jpg",
+      description: "Flowy day dress"
+    },
+    {
+      id: "women-2",
+      name: "Women Dress 2",
+      price: 1050,
+      image: "assets/images/clothing/IMG-20260204-WA0002.jpg",
+      description: "Elegant evening dress"
+    },
+    {
+      id: "women-3",
+      name: "Women Top & Skirt",
+      price: 1200,
+      image: "assets/images/clothing/IMG-20260204-WA0003.jpg",
+      description: "Coordinated set"
+    }
+  ],
+  kids: [
+    {
+      id: "kids-1",
+      name: "Kids Graphic Tee",
+      price: 450,
+      image: "assets/images/clothing/IMG-20260204-WA0004.jpg",
+      description: "Fun printed tee"
+    },
+    {
+      id: "kids-2",
+      name: "Kids Hoodie",
+      price: 650,
+      image: "assets/images/clothing/IMG-20260204-WA0005.jpg",
+      description: "Warm and cozy"
+    },
+    {
+      id: "kids-3",
+      name: "Kids Joggers",
+      price: 550,
+      image: "assets/images/clothing/IMG-20260204-WA0006.jpg",
+      description: "Play-ready bottoms"
+    }
+  ]
+};
+
+function renderProductsForCategory(category) {
+  const products = productCatalog[category] || [];
+  const grid = document.getElementById("productsGrid");
+  const title = document.getElementById("categoryTitle");
+
+  const displayName = {
+    mens: "Men's Fashion",
+    womens: "Women's Fashion",
+    kids: "Kids' Fashion"
+  }[category] || "Products";
+
+  title.textContent = displayName;
+
+  if (!grid) return;
+
+  if (products.length === 0) {
+    grid.innerHTML = `<div class="empty-state">No products found for this category.</div>`;
+    return;
+  }
+
+  grid.innerHTML = products
+    .map(product => {
+      return `
+        <div class="product-card" data-product-id="${product.id}" data-price="${product.price}">
+          <img src="${product.image}" alt="${product.name}">
+          <div class="product-info">
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-description">${product.description}</p>
+            <p class="product-price">KES ${product.price}</p>
+            <button class="add-to-cart-btn" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}">Add to Cart</button>
+          </div>
+        </div>
+      `;
+    })
+    .join("");
+
+  grid.querySelectorAll(".add-to-cart-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.id;
+      const name = btn.dataset.name;
+      const price = Number(btn.dataset.price);
+      addToCart(id, name, price);
+    });
+  });
+}
+
 function showMenu() {
   document.getElementById("hero").style.display = "none";
   document.getElementById("shopMenu").style.display = "block";
@@ -325,8 +443,7 @@ function backToHome() {
 function showCategory(category) {
   document.getElementById("shopMenu").style.display = "none";
   document.getElementById("productsSection").style.display = "block";
-
-  document.getElementById("categoryTitle").textContent = category + " Fashion";
+  renderProductsForCategory(category);
 }
 
 function backToMenu() {
