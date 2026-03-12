@@ -168,6 +168,48 @@ body {
     font-weight: 700;
 }
 
+.back-btn {
+    position: absolute;
+    top: 1.4rem;
+    left: 1.4rem;
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+.back-btn:focus-visible {
+    outline: 3px solid rgba(0, 123, 255, 0.75);
+    outline-offset: 2px;
+}
+
+.search-input {
+    width: min(440px, 100%);
+    padding: 0.85rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 12px 25px rgba(0, 123, 255, 0.2);
+}
+
 .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
