@@ -274,10 +274,15 @@ function initializeImageEnlarger() {
   const images = document.querySelectorAll('img');
 
   images.forEach(img => {
+    // Avoid re-attaching the handler multiple times when new products are rendered.
+    if (img.dataset.zoomAttached === 'true') return;
+
     img.style.cursor = 'zoom-in';
     img.addEventListener('dblclick', () => {
       showImageZoomOverlay(img.src);
     });
+
+    img.dataset.zoomAttached = 'true';
   });
 }
 
@@ -540,6 +545,10 @@ function renderProductsForCategory(category) {
       `;
     })
     .join("");
+
+  // Re-attach the zoom handler and error fallback for images that were just added to the DOM.
+  initializeImageEnlarger();
+  initializeImageFallbacks();
 
   grid.querySelectorAll(".add-to-cart-btn").forEach(btn => {
     btn.addEventListener("click", () => {
