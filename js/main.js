@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   loadCartFromLocalStorage();
   renderCartPanel();
   initializeImageEnlarger();
+  initializeImageFallbacks();
 });
 
 // 2. SHOP NOW BUTTON
@@ -324,6 +325,39 @@ function closeImageZoomOverlay() {
     document.removeEventListener('keydown', imageZoomState.keyListener);
     imageZoomState.keyListener = null;
   }
+}
+
+function initializeImageFallbacks() {
+  const PLACEHOLDER = 'https://via.placeholder.com/400x400?text=No+Image';
+
+  document.querySelectorAll('img').forEach(img => {
+    const onError = () => {
+      img.removeEventListener('error', onError);
+      const src = img.getAttribute('src') || '';
+      console.warn(`Image failed to load: ${src}`);
+
+      // Try alternate relative paths that commonly differ by one level.
+      const trySources = [];
+      if (src.startsWith('../')) {
+        trySources.push(src.replace('../', ''));
+      }
+      if (!src.startsWith('../') && !src.startsWith('/')) {
+        trySources.push(`../${src}`);
+      }
+
+      for (const candidate of trySources) {
+        if (candidate && candidate !== src) {
+          img.src = candidate;
+          img.addEventListener('error', onError);
+          return;
+        }
+      }
+
+      img.src = PLACEHOLDER;
+    };
+
+    img.addEventListener('error', onError);
+  });
 }
 
 // ========================================
