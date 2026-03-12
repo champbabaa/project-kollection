@@ -18,8 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // 2. SHOP NOW BUTTON
 // ========================================
 function initializeShopButtons() {
-  const shopButtons = document.querySelectorAll(".hero button, .products button");
-  
+  // On the landing page we use the built-in `showMenu` handler.
+  // For other product pages, keep the default navigation behavior.
+  const shopButtons = document.querySelectorAll(".products button");
+
   shopButtons.forEach(button => {
     button.addEventListener("click", function (e) {
       e.preventDefault();
