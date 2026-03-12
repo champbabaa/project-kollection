@@ -351,7 +351,6 @@ const womenImagePaths = [
   "images/IMG-20260204-WA0020.jpg",
   "images/IMG-20260204-WA0021.jpg",
   "images/IMG-20260204-WA0022.jpg",
-  "images/IMG-20260204-WA0023.jpg",
   "images/IMG-20260204-WA0024.jpg",
   "images/IMG-20260204-WA0025.jpg",
   "images/IMG-20260204-WA0026.jpg",
@@ -385,7 +384,24 @@ const womenImagePaths = [
   "images/IMG-20260204-WA0054.jpg",
   "images/IMG-20260204-WA0056.jpg",
   "images/IMG-20260204-WA0057.jpg",
-  "images/IMG-20260204-A0057.jpg"
+  "images/IMG-20260204-A0057.jpg",
+  "images/clothing/IMG-20260204-WA0001.jpg",
+  "images/clothing/IMG-20260204-WA0002.jpg",
+  "images/clothing/IMG-20260204-WA0003.jpg",
+  "images/clothing/IMG-20260204-WA0004.jpg",
+  "images/clothing/IMG-20260204-WA0005.jpg",
+  "images/clothing/IMG-20260204-WA0006.jpg",
+  "images/clothing/IMG-20260204-WA0007.jpg",
+  "images/clothing/IMG-20260204-WA0008.jpg",
+  "images/clothing/IMG-20260204-WA0009.jpg",
+  "images/clothing/IMG-20260204-WA0010.jpg",
+  "images/clothing/IMG-20260204-WA0011.jpg",
+  "images/clothing/IMG-20260204-WA0012.jpg",
+  "images/clothing/IMG-20260204-WA0013.jpg",
+  "images/clothing/IMG-20260204-WA0014.jpg",
+  "images/clothing/IMG-20260204-WA0023.jpg",
+  "images/clothing/IMG-20260204-WA0058.jpg",
+  "images/clothing/IMG-20260204-WA0059.jpg"
 ];
 
 const productCatalog = {
@@ -462,7 +478,8 @@ function renderProductsForCategory(category) {
     .map(product => {
       return `
         <div class="product-card" data-product-id="${product.id}" data-price="${product.price}">
-          <img src="${product.image}" alt="${product.name}">
+          <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'240\' viewBox=\'0 0 400 240\'%3E%3Crect width=\'400\' height=\'240\' fill=\'%23f5f5f5\'/%3E%3Ctext x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23999\' font-family=\'sans-serif\' font-size=\'20\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+          <button class="wishlist-btn" aria-label="Add to wishlist">❤</button>
           <div class="product-info">
             <h3 class="product-name">${product.name}</h3>
             <p class="product-description">${product.description}</p>
@@ -480,6 +497,16 @@ function renderProductsForCategory(category) {
       const name = btn.dataset.name;
       const price = Number(btn.dataset.price);
       addToCart(id, name, price);
+    });
+  });
+
+  grid.querySelectorAll(".wishlist-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      const card = btn.closest(".product-card");
+      const name = card?.querySelector(".product-name")?.textContent || "item";
+      const verb = btn.classList.contains("active") ? "Added" : "Removed";
+      showNotification(`${verb} ${name} ${verb === "Added" ? "to" : "from"} wishlist`);
     });
   });
 }
