@@ -320,21 +320,21 @@ const productCatalog = {
       id: "men-1",
       name: "Men's Classic Shirt",
       price: 950,
-      image: "assets/images/clothing/IMG.jpg",
+      image: "images/clothing/IMG-20260204-WA0007.jpg",
       description: "Elegant everyday shirt"
     },
     {
       id: "men-2",
       name: "Men's Denim Jacket",
       price: 1500,
-      image: "assets/images/clothing/IMG-20260204-WA0001.jpg",
+      image: "images/clothing/IMG-20260204-WA0001.jpg",
       description: "Casual denim jacket"
     },
     {
       id: "men-3",
       name: "Men's Joggers",
       price: 800,
-      image: "assets/images/clothing/IMG-20260204-WA0002.jpg",
+      image: "images/clothing/IMG-20260204-WA0002.jpg",
       description: "Comfort-fit joggers"
     }
   ],
@@ -343,21 +343,21 @@ const productCatalog = {
       id: "women-1",
       name: "Women Dress 1",
       price: 1000,
-      image: "assets/images/clothing/IMG-20260204-WA0001.jpg",
+      image: "images/clothing/IMG-20260204-WA0001.jpg",
       description: "Flowy day dress"
     },
     {
       id: "women-2",
       name: "Women Dress 2",
       price: 1050,
-      image: "assets/images/clothing/IMG-20260204-WA0002.jpg",
+      image: "images/clothing/IMG-20260204-WA0002.jpg",
       description: "Elegant evening dress"
     },
     {
       id: "women-3",
       name: "Women Top & Skirt",
       price: 1200,
-      image: "assets/images/clothing/IMG-20260204-WA0003.jpg",
+      image: "images/clothing/IMG-20260204-WA0003.jpg",
       description: "Coordinated set"
     }
   ],
@@ -366,21 +366,21 @@ const productCatalog = {
       id: "kids-1",
       name: "Kids Graphic Tee",
       price: 450,
-      image: "assets/images/clothing/IMG-20260204-WA0004.jpg",
+      image: "images/clothing/IMG-20260204-WA0004.jpg",
       description: "Fun printed tee"
     },
     {
       id: "kids-2",
       name: "Kids Hoodie",
       price: 650,
-      image: "assets/images/clothing/IMG-20260204-WA0005.jpg",
+      image: "images/clothing/IMG-20260204-WA0005.jpg",
       description: "Warm and cozy"
     },
     {
       id: "kids-3",
       name: "Kids Joggers",
       price: 550,
-      image: "assets/images/clothing/IMG-20260204-WA0006.jpg",
+      image: "images/clothing/IMG-20260204-WA0006.jpg",
       description: "Play-ready bottoms"
     }
   ]
