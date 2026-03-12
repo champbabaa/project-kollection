@@ -772,3 +772,34 @@ body.checkout-page {
     font-weight: bold;
     margin-bottom: 12px;
 }
+
+/* IMAGE ZOOM OVERLAY */
+.image-zoom-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    cursor: zoom-out;
+}
+
+.image-zoom-overlay.active {
+    display: flex;
+}
+
+.image-zoom-overlay__img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+    cursor: zoom-out;
+    transition: transform 0.25s ease;
+}
+
+.image-zoom-overlay__img:hover {
+    transform: scale(1.02);
+}

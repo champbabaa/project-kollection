@@ -269,45 +269,61 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // 11. IMAGE ENLARGER (double-click to zoom)
 // ========================================
 
-const productImages = document.querySelectorAll('.product-card img');
-productImages.forEach(img => {
-  img.style.cursor = 'zoom-in';
-  img.addEventListener('dblclick', () => openOverlay(img.src));
-});
+function initializeImageEnlarger() {
+  const images = document.querySelectorAll('.product-card img, .product-img-wrapper img');
 
-function openOverlay(src) {
-  let overlay = document.getElementById('image-overlay');
-  if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.id = 'image-overlay';
-    overlay.style.cssText = `
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-      cursor: zoom-out;
-    `;
+  images.forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('dblclick', () => {
+      showImageZoomOverlay(img.src);
+    });
+  });
+}
 
-    overlay.addEventListener('click', () => overlay.remove());
+const imageZoomState = {
+  overlay: null,
+  keyListener: null,
+};
+
+function showImageZoomOverlay(src) {
+  if (!imageZoomState.overlay) {
+    const overlay = document.createElement('div');
+    overlay.id = 'image-zoom-overlay';
+    overlay.className = 'image-zoom-overlay';
+    overlay.addEventListener('click', closeImageZoomOverlay);
     document.body.appendChild(overlay);
+    imageZoomState.overlay = overlay;
   }
 
-  overlay.innerHTML = `<img src="${src}" style="max-width:90%;max-height:90%;border:4px solid white;box-shadow:0 0 0 100vw rgba(0,0,0,0.7);"/>`;
+  imageZoomState.overlay.innerHTML = `
+    <img src="${src}" alt="Zoomed image" class="image-zoom-overlay__img" />
+  `;
+  imageZoomState.overlay.classList.add('active');
 
-  // Close on escape
-  const escListener = (e) => {
+  if (imageZoomState.keyListener) {
+    document.removeEventListener('keydown', imageZoomState.keyListener);
+  }
+
+  imageZoomState.keyListener = (e) => {
     if (e.key === 'Escape') {
-      overlay.remove();
-      document.removeEventListener('keydown', escListener);
+      closeImageZoomOverlay();
     }
   };
-  document.addEventListener('keydown', escListener);
+
+  document.addEventListener('keydown', imageZoomState.keyListener);
+}
+
+function closeImageZoomOverlay() {
+  if (!imageZoomState.overlay) return;
+
+  imageZoomState.overlay.classList.remove('active');
+  imageZoomState.overlay.remove();
+  imageZoomState.overlay = null;
+
+  if (imageZoomState.keyListener) {
+    document.removeEventListener('keydown', imageZoomState.keyListener);
+    imageZoomState.keyListener = null;
+  }
 }
 
 // ========================================
