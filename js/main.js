@@ -314,6 +314,80 @@ function openOverlay(src) {
 // SHOP MENU NAVIGATION
 // ========================================
 
+// Utility used to build a large product list from an array of image paths.
+function createProductsFromImages(prefix, images) {
+  return images.map((img, index) => {
+    const idx = index + 1;
+    return {
+      id: `${prefix}-${idx}`,
+      name: `${prefix.charAt(0).toUpperCase() + prefix.slice(1)} Item ${idx}`,
+      price: 800 + (idx % 5) * 100,
+      image: img,
+      description: `Stylish ${prefix} item #${idx}`
+    };
+  });
+}
+
+const womenImagePaths = [
+  "images/IMG-20260204-WA0001.jpg",
+  "images/IMG-20260204-WA0002.jpg",
+  "images/IMG-20260204-WA0003.jpg",
+  "images/IMG-20260204-WA0004.jpg",
+  "images/IMG-20260204-WA0005.jpg",
+  "images/IMG-20260204-WA0006.jpg",
+  "images/IMG-20260204-WA0007.jpg",
+  "images/IMG-20260204-WA0008.jpg",
+  "images/IMG-20260204-WA0009.jpg",
+  "images/IMG-20260204-WA0010.jpg",
+  "images/IMG-20260204-WA0011.jpg",
+  "images/IMG-20260204-WA0012.jpg",
+  "images/IMG-20260204-WA0013.jpg",
+  "images/IMG-20260204-WA0014.jpg",
+  "images/IMG-20260204-WA0015.jpg",
+  "images/IMG-20260204-WA0016.jpg",
+  "images/IMG-20260204-WA0017.jpg",
+  "images/IMG-20260204-WA0018.jpg",
+  "images/IMG-20260204-WA0019.jpg",
+  "images/IMG-20260204-WA0020.jpg",
+  "images/IMG-20260204-WA0021.jpg",
+  "images/IMG-20260204-WA0022.jpg",
+  "images/IMG-20260204-WA0023.jpg",
+  "images/IMG-20260204-WA0024.jpg",
+  "images/IMG-20260204-WA0025.jpg",
+  "images/IMG-20260204-WA0026.jpg",
+  "images/IMG-20260204-WA0027.jpg",
+  "images/IMG-20260204-WA0028.jpg",
+  "images/IMG-20260204-WA0029.jpg",
+  "images/IMG-20260204-WA0030.jpg",
+  "images/IMG-20260204-WA0031.jpg",
+  "images/IMG-20260204-WA0032.jpg",
+  "images/IMG-20260204-WA0033.jpg",
+  "images/IMG-20260204-WA0034.jpg",
+  "images/IMG-20260204-WA0035.jpg",
+  "images/IMG-20260204-WA0036.jpg",
+  "images/IMG-20260204-WA0037.jpg",
+  "images/IMG-20260204-WA0038.jpg",
+  "images/IMG-20260204-WA0039.jpg",
+  "images/IMG-20260204-WA0040.jpg",
+  "images/IMG-20260204-WA0041.jpg",
+  "images/IMG-20260204-WA0042.jpg",
+  "images/IMG-20260204-WA0043.jpg",
+  "images/IMG-20260204-WA0044.jpg",
+  "images/IMG-20260204-WA0045.jpg",
+  "images/IMG-20260204-WA0046.jpg",
+  "images/IMG-20260204-WA0047.jpg",
+  "images/IMG-20260204-WA0048.jpg",
+  "images/IMG-20260204-WA0049.jpg",
+  "images/IMG-20260204-WA0050.jpg",
+  "images/IMG-20260204-WA0051.jpg",
+  "images/IMG-20260204-WA0052.jpg",
+  "images/IMG-20260204-WA0053.jpg",
+  "images/IMG-20260204-WA0054.jpg",
+  "images/IMG-20260204-WA0056.jpg",
+  "images/IMG-20260204-WA0057.jpg",
+  "images/IMG-20260204-A0057.jpg"
+];
+
 const productCatalog = {
   mens: [
     {
@@ -338,29 +412,7 @@ const productCatalog = {
       description: "Comfort-fit joggers"
     }
   ],
-  womens: [
-    {
-      id: "women-1",
-      name: "Women Dress 1",
-      price: 1000,
-      image: "images/clothing/IMG-20260204-WA0001.jpg",
-      description: "Flowy day dress"
-    },
-    {
-      id: "women-2",
-      name: "Women Dress 2",
-      price: 1050,
-      image: "images/clothing/IMG-20260204-WA0002.jpg",
-      description: "Elegant evening dress"
-    },
-    {
-      id: "women-3",
-      name: "Women Top & Skirt",
-      price: 1200,
-      image: "images/clothing/IMG-20260204-WA0003.jpg",
-      description: "Coordinated set"
-    }
-  ],
+  womens: createProductsFromImages("women", womenImagePaths),
   kids: [
     {
       id: "kids-1",
