@@ -575,4 +575,19 @@ function showCategory(category) {
 function backToMenu() {
   document.getElementById("productsSection").style.display = "none";
   document.getElementById("shopMenu").style.display = "block";
-}
+}const categoryButtons = document.querySelectorAll('.category-btn');
+
+categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const category = button.dataset.category;
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            const productCategory = card.dataset.category;
+            if (productCategory === category) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
